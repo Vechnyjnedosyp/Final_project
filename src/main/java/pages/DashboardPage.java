@@ -57,19 +57,11 @@ public class DashboardPage extends PageMainLocators {
     }
 
     @Step("Check the exist of elements")
-    public DashboardPage checkElements() throws InterruptedException {
+    public DashboardPage checkElements() {
         ElementsCollection dashboard = dashboardBody.$$("div");
         for (SelenideElement selenideElement : dashboard) {
             selenideElement.shouldBe(Condition.exist); //exist // условия присутствия элемента
         }
-//        JavascriptExecutor js = (JavascriptExecutor) getWebDriver();
-//        long NUMOFITEM = 0;
-//
-//        while (NUMOFITEM != (Long) js.executeScript("return document.querySelectorAll('*').length;")) {
-//            NUMOFITEM = (Long) js.executeScript("return document.querySelectorAll('*').length;");
-//            Thread.sleep(500);
-//        }
-//        System.out.println(NUMOFITEM);
         return this;
     }
 

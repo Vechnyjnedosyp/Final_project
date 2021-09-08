@@ -28,6 +28,7 @@ public class AdminPage extends PageMainLocators {
         return this;
     }
 
+    @Step("Select one job")
     public AdminPage deleteJob() {
         ElementsCollection jobsCollection = resultTable.$$("tr");
         jobsCollection.get(1).$(By.cssSelector(radioButton)).click();
