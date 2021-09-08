@@ -38,7 +38,7 @@ public class PageMainLocators {
         alertButton.click();
     }
 
-    @Step("Пet equality")
+    @Step("Get equality")
     public void getAssertEquals(String expected, String current) {
         Assertions.assertEquals(expected, current,
                 "Your operation was unsuccessful.");
