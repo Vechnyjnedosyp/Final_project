@@ -97,7 +97,7 @@ public class RunnerTest extends TestsSetups {
         addJobPage.getAssertEquals(addJobPage.saveText, addJobPage.messageInfo.getText());
     }
 
-    @Epic("TESTING FOR https://www.saucedemo.com/ tasks")
+    @Epic("TESTING FOR https://opensource-demo.orangehrmlive.com/index.php/auth/login tasks")
     @Feature(value = "Delete a job")
     @Severity(SeverityLevel.MINOR)
     @Description("In this test we will delete a job. When we delete a job, we should get a message of successful operation.")
