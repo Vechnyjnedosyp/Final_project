@@ -23,7 +23,7 @@ public class AssignLeavePage extends PageMainLocators {
     SelenideElement fromField = $("#assignleave_txtFromDate");
     SelenideElement toField = $("#assignleave_txtToDate");
     SelenideElement commentField = $("#assignleave_txtComment");
-    SelenideElement imgFromLink = $("img[class= 'ui-datepicker-trigger']");
+    SelenideElement calendarField = $("img[class= 'ui-datepicker-div']");
     SelenideElement assignButton = $("#assignBtn");
     SelenideElement resultTable = $("div[class= 'ac_results']");
     SelenideElement confirmOkButton = $("#confirmOkButton");
@@ -38,12 +38,16 @@ public class AssignLeavePage extends PageMainLocators {
         ElementsCollection employeesName = resultTable.$$("li");
         ((JavascriptExecutor)getWebDriver()).executeScript("arguments[0].click();", employeesName.first());
         leaveTypeSelect.shouldBe(Condition.enabled).selectOption(10);
+        leaveBalanceField.shouldHave(Condition.text("view details"));
         fromField.clear();
         fromField.shouldBe(Condition.exist).sendKeys(formattedDate);
         fromField.sendKeys(Keys.ENTER);
+        calendarField.shouldBe(Condition.disappear);
         toField.clear();
         toField.shouldBe(Condition.exist).sendKeys(formattedDate);
         toField.sendKeys(Keys.ENTER);
+        calendarField.shouldBe(Condition.disappear);
+//        commentField.sendKeys(Keys.ENTER);
         commentField.shouldBe(Condition.exist).sendKeys("Test");
         assignButton.shouldBe(Condition.visible).click();
         confirmOkButton.shouldBe(Condition.visible).click();
