@@ -34,7 +34,7 @@ public class AssignLeavePage extends PageMainLocators {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         Date currentDate = new Date();  // Текущая дата
         String formattedDate = df.format(currentDate);
-        assignNameField.shouldBe(Condition.exist).sendKeys("d");
+        assignNameField.shouldBe(Condition.exist).sendKeys("k");
         ElementsCollection employeesName = resultTable.$$("li");
         ((JavascriptExecutor)getWebDriver()).executeScript("arguments[0].click();", employeesName.first());
         leaveTypeSelect.shouldBe(Condition.enabled).selectOption(10);

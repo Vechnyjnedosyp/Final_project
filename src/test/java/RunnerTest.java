@@ -173,13 +173,12 @@ public class RunnerTest extends TestsSetups {
     @Order(8)
     @Test
     @DisplayName("Check elements on dashboard page.")
-    public void testElementsDashboard() throws IOException, InterruptedException {
+    public void testElementsDashboard() throws IOException {
         LoginPage loginPage = new LoginPage();
         DashboardPage dashboardPage = new DashboardPage();
         loginPage.openLoginPage().logInPanelHeading.shouldBe(Condition.visible);
         loginPage.login();
         dashboardPage.checkElements();
-
     }
 
     @Epic("TESTING FOR https://opensource-demo.orangehrmlive.com/index.php/auth/login tasks")
